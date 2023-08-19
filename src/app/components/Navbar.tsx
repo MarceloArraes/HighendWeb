@@ -14,7 +14,7 @@ export default function Navbar() {
         >
           <Image
             src={"/Logo4.png"}
-            className="mr-2"
+            // className="mr-2"
             alt="GFG"
             width={100}
             height={100}

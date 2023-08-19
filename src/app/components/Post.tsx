@@ -1,8 +1,19 @@
 import Link from "next/link";
 
-export default function Post(props: any) {
+interface PostProps {
+  content: {
+    department: string;
+    title: string;
+    info: string;
+    author: string;
+    designation: string;
+  };
+  index: number;
+}
+
+export default function Post({ content, index }: PostProps) {
   return (
-    <div key={props.index}>
+    <div key={index}>
       <div className="bg-white shadow-2xl w-96">
         <div className="mx-auto max-w-7xl ">
           <div
@@ -16,7 +27,7 @@ export default function Post(props: any) {
             >
               <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime="2023-03-16" className="text-gray-500">
-                  Mar 16, 2023
+                  Mar 16, 2023 index:{index}
                 </time>
                 <Link
                   href="#"
@@ -25,7 +36,7 @@ export default function Post(props: any) {
                                                font-medium text-gray-600
                                                hover:bg-gray-100"
                 >
-                  {props.content.department}
+                  {content.department}
                 </Link>
               </div>
               <div className="group relative">
@@ -36,14 +47,14 @@ export default function Post(props: any) {
                 >
                   <Link href="#">
                     <span className="absolute inset-0"></span>
-                    {props.content.title}
+                    {content.title}
                   </Link>
                 </h3>
                 <p
                   className="mt-5 line-clamp-3 text-sm
                                               leading-6 text-gray-600"
                 >
-                  {props.content.info}
+                  {content.info}
                 </p>
               </div>
               <div
@@ -70,10 +81,10 @@ export default function Post(props: any) {
                   <p className="font-semibold text-gray-900">
                     <Link href="#">
                       <span className="absolute inset-0"></span>
-                      {props.content.author}
+                      {content.author}
                     </Link>
                   </p>
-                  <p className="text-gray-600">{props.content.designation}</p>
+                  <p className="text-gray-600">{content.designation}</p>
                 </div>
               </div>
             </article>
