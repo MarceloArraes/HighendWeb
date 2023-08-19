@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Post(props: any) {
   return (
-    <div>
+    <div key={props.index}>
       <div className="bg-white shadow-2xl w-96">
         <div className="mx-auto max-w-7xl ">
           <div
