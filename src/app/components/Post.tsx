@@ -8,12 +8,12 @@ interface PostProps {
     author: string;
     designation: string;
   };
-  index: number;
+  key: any;
 }
 
-export default function Post({ content, index }: PostProps) {
+export default function Post({ content, key }: PostProps) {
   return (
-    <div key={index}>
+    <div key={key}>
       <div className="bg-white shadow-2xl w-96">
         <div className="mx-auto max-w-7xl ">
           <div
@@ -27,7 +27,7 @@ export default function Post({ content, index }: PostProps) {
             >
               <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime="2023-03-16" className="text-gray-500">
-                  Mar 16, 2023 index:{index}
+                  Mar 16, 2023
                 </time>
                 <Link
                   href="#"
